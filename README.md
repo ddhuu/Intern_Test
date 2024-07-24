@@ -33,16 +33,16 @@ Welcome to the G-Weather-Forecast app, your go-to application for real-time and 
 - **Description**: At any time, you can unsubscribe from receiving daily weather forecasts through a link provided in every email.
 - **Screenshot**: ![Unsubscribe](./docs/images/Unsubcribe.png)
 ### Responsive Design
-- **Description**: Enjoy a seamless experience across all devices, thanks to our responsive design.
+
 - **Screenshot**: ![Responsive Design](./docs/images/Unsubcribe.png)
 
 ### Responsive Design
-- **Description**: Enjoy a seamless experience across all devices, thanks to our responsive design.
-- **Screenshot**: 
-    #### 1. Tablet Device
-    ![Responsive Design](./docs/images/ResponsiveTablet.png)
-    #### 2. Mobile Device
-    ![Responsive Design](./docs/images/ResponsiveMobile.png)
+
+
+#### 1. Tablet Device
+![Responsive Design](./docs/images/ResponsiveTablet.png)
+#### 2. Mobile Device
+![Responsive Design](./docs/images/ResponsiveMobile.png)
 
 
 

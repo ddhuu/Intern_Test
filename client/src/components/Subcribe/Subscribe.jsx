@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
+import { Subcribe, UnSubcribe } from "../../apis/User";
 
 const Subscribe = () => {
   const [email, setEmail] = useState("");
@@ -13,17 +14,28 @@ const Subscribe = () => {
     }
   }, []);
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = async (e) => {
     e.preventDefault();
-    localStorage.setItem("userEmail", email);
-    setIsRegistered(true);
+    try {
+      const city = localStorage.getItem("userCity");
+      await Subcribe(email, city);
+      localStorage.setItem("userEmail", email);
+      setIsRegistered(true);
+    } catch (error) {
+      console.error("Subscription error:", error);
+    }
   };
 
-  const handleUnsubscribe = (e) => {
+  const handleUnsubscribe = async (e) => {
     e.preventDefault();
-    localStorage.removeItem("userEmail");
-    setEmail("");
-    setIsRegistered(false);
+    try {
+      await UnSubcribe(email);
+      localStorage.removeItem("userEmail");
+      setEmail("");
+      setIsRegistered(false);
+    } catch (error) {
+      console.error("Unsubscription error:", error);
+    }
   };
 
   return (

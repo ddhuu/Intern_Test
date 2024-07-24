@@ -10,6 +10,7 @@ class UserController {
   newUser = async (req, res, next) => {
     const response = await newUserService({
       email: req.body.email,
+      city: req.body.city,
     });
 
     if (response.error) {

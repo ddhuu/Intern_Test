@@ -9,6 +9,7 @@ const otpSchema = new Schema(
   {
     otp_token: { type: String, required: true },
     otp_email: { type: String, required: true },
+    otp_city: { type: String, required: true },
     otp_status: {
       type: String,
       default: "pending",

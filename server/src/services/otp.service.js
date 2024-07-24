@@ -8,11 +8,12 @@ const generateToken = () => {
   return token;
 };
 
-const newOtp = async ({ email = null }) => {
+const newOtp = async ({ email, city }) => {
   const token = generateToken();
   const newToken = await OTP.create({
     otp_token: token,
     otp_email: email,
+    otp_city: city,
   });
 
   return newToken;

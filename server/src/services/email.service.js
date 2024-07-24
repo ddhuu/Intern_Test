@@ -32,10 +32,10 @@ const sendEmailLinkVerify = async ({
   }
 };
 
-const sendEmailToken = async ({ email }) => {
+const sendEmailToken = async ({ email, city }) => {
   try {
     // 1. Get token
-    const token = await newOtp({ email });
+    const token = await newOtp({ email, city });
     // 2. Get template
     const template = htmlEmailToken();
 

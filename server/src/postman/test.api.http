@@ -14,7 +14,8 @@ POST http://localhost:5000/api/v1/user/subscribe
 Content-Type: application/json
 
 {
-  "email": "ddhuu.dev@gmail.com"
+  "email": "ddhuu.dev@gmail.com",
+  "city": "Ho Chi Minh"
 }
 
 

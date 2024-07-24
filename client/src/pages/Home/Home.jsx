@@ -6,7 +6,6 @@ import { apiGetCoord } from "../../apis/Coord";
 import { apiGetCityName } from "../../apis/City";
 import { apiGetWeather } from "../../apis/Weather";
 
-const API_KEY = "c6b3e79b739c54f43a8482c099e0c245";
 export const Home = () => {
   const [cityName, setCityName] = useState("Viet Nam");
   const [currentCity, setCurrentCity] = useState("Viet Nam");
@@ -87,6 +86,7 @@ export const Home = () => {
       async (pos) => {
         const { latitude: lat, longitude: lon } = pos.coords;
         const name = await getCityName(lat, lon);
+        localStorage.setItem("userCity", name);
         setCurrentCity(name);
         saveSearchToHistory(name);
         getWeatherDetails(name, lat, lon);

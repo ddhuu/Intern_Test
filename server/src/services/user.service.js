@@ -4,7 +4,7 @@ const USER = require("../models/user.model");
 const { sendEmailToken } = require("./email.service");
 const { checkEmailToken } = require("./otp.service");
 
-const newUserService = async ({ email }) => {
+const newUserService = async ({ email, city }) => {
   const user = await USER.findOne({ usr_email: email }).lean();
   if (user) {
     return {
@@ -14,6 +14,7 @@ const newUserService = async ({ email }) => {
   }
   const result = await sendEmailToken({
     email,
+    city,
   });
 
   return {
@@ -27,15 +28,19 @@ const newUserService = async ({ email }) => {
 const checkEmailTokenService = async ({ token }) => {
   try {
     //1. Check Token
-    const { otp_email: email } = await checkEmailToken({ token });
+    const { otp_email: email, otp_city: city } = await checkEmailToken({
+      token,
+    });
     if (!email) throw Error("Token not found");
     //2. Check email
     const hasUser = await findUserByEmail({ usr_email: email });
     if (hasUser) throw new Error("Email exist");
     //3. Create new user
 
+    console.log(city);
     const newUser = await createUser({
       usr_email: email,
+      usr_city: city,
     });
 
     return {
@@ -45,6 +50,7 @@ const checkEmailTokenService = async ({ token }) => {
         user: {
           _id: newUser._id,
           usr_email: newUser.usr_email,
+          usr_city: newUser.usr_city,
         },
       },
     };
@@ -62,10 +68,11 @@ const findUserByEmail = async ({ email }) => {
   }
 };
 
-const createUser = async ({ usr_email }) => {
+const createUser = async ({ usr_email, usr_city }) => {
   try {
     const newUser = await USER.create({
       usr_email,
+      usr_city,
     });
     return newUser;
   } catch (error) {
