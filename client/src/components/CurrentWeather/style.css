@@ -1,0 +1,28 @@
+.current-weather {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #0098fe, #5b548a);
+  padding: 20px 80px 20px 20px;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.weather-detail h3 {
+  margin: 20px 0;
+  font-size: 20px;
+}
+
+.weather-detail p {
+  font-size: 17px;
+  margin: 16px 0;
+}
+
+.weather-status img {
+  max-width: 150px;
+  margin-top: -15px;
+}
+
+.weather-status p {
+  margin-top: -10px;
+  text-align: center;
+}

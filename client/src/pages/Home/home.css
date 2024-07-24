@@ -1,0 +1,108 @@
+.container {
+  display: flex;
+  gap: 25px;
+  padding: 20px;
+  background: #0f4a75;
+}
+
+.search-section {
+  width: 550px;
+}
+
+.search-section h3{
+  color: #fff;
+}
+
+.search-section input {
+  width: 100%;
+  height: 40px;
+  outline: none;
+  margin: 10px 0;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-section button {
+  width: 100%;
+  height: 35px;
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  color: #fff;
+  background: #4a609f;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.search-section .btn-current {
+  background: #717e8a;
+}
+
+.search-section .break-section {
+  width: 100%;
+  height: 2px;
+  background: #bbb;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-section .break-section::before {
+  content: "or";
+  color: #fff;
+  background: #0f4a75;
+  font-size: 16px;
+  margin-top: -4px;
+}
+
+.weather-data {
+  width: 100%;
+}
+
+@media (max-width: 1400px) {
+    .weather-data .btn-current {
+      padding: 20px;
+    }
+    .list-card {
+      flex-wrap: wrap;
+    }
+  
+    .card {
+      width: calc(100% / 4 - 15px);
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .card {
+      width: calc(100% / 3 - 15px);
+    }
+  }
+  
+  @media (max-width: 950px) {
+    .search-section {
+      width: 450px;
+    }
+    .card {
+      width: calc(100% / 2 - 15px);
+    }
+  }
+  
+  @media (max-width: 750px) {
+    .container {
+      flex-direction: column;
+    }
+    .search-section {
+      width: 100%;
+    }
+    .card {
+      width: 100%;
+    }
+  }
+  
+
+
+.

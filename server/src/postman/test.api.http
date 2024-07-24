@@ -1,0 +1,30 @@
+GET http://localhost:5000/api/v1/weather/40.7128/-74.0060
+Content-Type: application/json
+
+
+GET http://localhost:5000/api/v1/coordinates/New%20York
+Content-Type: application/json
+
+
+GET http://localhost:5000/api/v1/cityname/40.7128/-74.0060
+Content-Type: application/json
+
+
+POST http://localhost:5000/api/v1/user/subscribe
+Content-Type: application/json
+
+{
+  "email": "ddhuu.dev@gmail.com"
+}
+
+
+GET http://localhost:5000/api/v1/user/verify?token=535867708
+Content-Type: application/json
+
+
+POST http://localhost:5000/api/v1/user/unsubscribe
+Content-Type: application/json
+
+{
+  "email": "ddhuu.dev@gmail.com"
+}

@@ -1,0 +1,43 @@
+/* style.css */
+.subscribe-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  width: 400px;
+  background: linear-gradient(135deg, #66b5ea, #575371);
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.subscribe-form-container h2 {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.subscribe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.subscribe-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  flex: grow;
+}
+
+.subscribe-button {
+  padding: 10px 0px;
+  background-color: #0f4a75;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.subscribe-button:hover {
+  background-color: #0056b3;
+}

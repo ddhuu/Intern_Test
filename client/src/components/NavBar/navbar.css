@@ -1,0 +1,34 @@
+.navBar {
+  display: flex;
+  background: #4a609f;
+  padding: 18px 0;
+}
+.navBar .title {
+  flex-grow: 1;
+  text-align: center;
+  color: #fff;
+  padding-left: 50px;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-item .icon {
+  position: absolute;
+  right: -6px;
+}
+.nav-item > * {
+  text-decoration: none;
+  margin-right: 1.7rem;
+  color: #fff;
+}
+
+.nav-item > *:hover {
+  color: black;
+}

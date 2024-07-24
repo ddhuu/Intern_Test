@@ -1,0 +1,25 @@
+.days-weather h2 {
+  margin: 20px 0;
+  color: #fff;
+}
+
+.list-card {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 1400px) {
+  .list-card {
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: calc(100% / 4 - 15px);
+  }
+}
+
+@media (max-width: 1200px) {
+  .card {
+    width: calc(100% / 3 - 15px);
+  }
+}

@@ -1,0 +1,17 @@
+.card {
+  list-style: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 10px 0px 10px 10px;
+  border-radius: 4px;
+  width: calc(100% / 5);
+}
+
+.card p {
+  margin: 10px 0;
+}
+
+.card img {
+  max-width: 80px;
+  margin-left: -12px;
+}
