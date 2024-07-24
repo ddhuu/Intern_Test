@@ -36,7 +36,7 @@ const RedirectHTML = (userData) => {
           <div class="user-info">Email: ${userData.usr_email}</div>
           <button
             class="redirect-btn"
-            onclick="window.location.href='http://localhost:5174';"
+            onclick="window.location.href='http://localhost:5173';"
           >
             Go to Homepage
           </button>

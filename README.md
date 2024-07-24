@@ -2,7 +2,7 @@
 
 # G-Weather-Forecast App
 
-Welcome to the G-Weather-Forecast app, your go-to application for real-time and forecasted weather information. Built with precision and user-friendliness in mind, this app ensures you stay updated with the weather conditions of your city or any city around the globe.
+Welcome to the `G-Weather`, an application for real-time and forecasted weather information. Built with precision and user-friendliness in mind, this app ensures you stay updated with the weather conditions of your city or any city around the globe.
 
 ## Features
 
@@ -30,11 +30,11 @@ Welcome to the G-Weather-Forecast app, your go-to application for real-time and 
 - **Screenshot**: ![Confirm Subscription](./docs/images/Confirm.png)
 
 #### 4. Unsubscribe
-- **Description**: At any time, you can unsubscribe from receiving daily weather forecasts through a link provided in every email.
+- **Description**: At any time, you can unsubscribe from receiving daily weather forecasts.
 - **Screenshot**: ![Unsubscribe](./docs/images/Unsubcribe.png)
-### Responsive Design
-
-- **Screenshot**: ![Responsive Design](./docs/images/Unsubcribe.png)
+### Daily Notification
+- **Description**: After subscribe,  you will receive a daily weather forecast base on the your current position at 8AM every day.
+- **Screenshot**: ![Unsubscribe](./docs/images/DailyAlert.png)
 
 ### Responsive Design
 
