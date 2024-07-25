@@ -7,18 +7,19 @@ import { apiGetCityName } from "../../apis/City";
 import { apiGetWeather } from "../../apis/Weather";
 
 export const Home = () => {
-  const [cityName, setCityName] = useState("Viet Nam");
-  const [currentCity, setCurrentCity] = useState("Viet Nam");
+  const [cityName, setCityName] = useState("");
+  const [currentCity, setCurrentCity] = useState("");
   const [weatherData, setWeatherData] = useState([{}]);
   const inputRef = useRef(null);
 
   useEffect(() => {
     const lastSearch = localStorage.getItem("lastSearch");
-    const defaultCityName = "Viet Nam";
+    const defaultCityName = "Ho Chi Minh";
     const cityName = lastSearch || defaultCityName;
-    setCityName(cityName);
+
     setCurrentCity(cityName);
     getCityCoordinates(cityName);
+    localStorage.setItem("userCity", cityName);
   }, []);
 
   const saveSearchToHistory = (cityName) => {
@@ -57,11 +58,13 @@ export const Home = () => {
         return -1;
       }
       const { name, lat, lon } = data[0];
+
       saveSearchToHistory(cityName);
       getWeatherDetails(name, lat, lon);
       return 1;
     } catch (error) {
       alert("An Error occurred while fetching data");
+      console.error(error);
       return -1;
     }
   };
@@ -70,6 +73,7 @@ export const Home = () => {
     try {
       const res = await apiGetCityName(lat, lon);
       const data = res.data;
+      console.log(data);
       if (!data.length) {
         alert("No City found");
         return;
@@ -85,6 +89,7 @@ export const Home = () => {
     navigator.geolocation.getCurrentPosition(
       async (pos) => {
         const { latitude: lat, longitude: lon } = pos.coords;
+        console.log(pos.coords);
         const name = await getCityName(lat, lon);
         localStorage.setItem("userCity", name);
         setCurrentCity(name);
@@ -102,13 +107,18 @@ export const Home = () => {
   };
 
   const handleSearch = async () => {
-    const result = await getCityCoordinates(cityName);
-    console.log(result);
-    if (result != -1) {
-      setCurrentCity(cityName);
+    try {
+      const result = await getCityCoordinates(cityName);
+      console.log(result);
+      if (result != -1) {
+        setCurrentCity(cityName);
+      }
+    } catch (error) {
+      console.error("Failed to fetch city coordinates:", error);
+    } finally {
+      setCityName("");
+      inputRef.current.blur();
     }
-    setCityName("");
-    inputRef.current.blur();
   };
 
   const handleInputChange = (e) => {

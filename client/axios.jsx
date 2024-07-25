@@ -8,17 +8,7 @@ const instance = axios.create({
 instance.interceptors.request.use(
   function (config) {
     // Do something before request is sent
-    let token = window.localStorage.getItem("rest03");
 
-    if (token) {
-      token = JSON.parse(token);
-    }
-    if (token.state?.token) {
-      config.headers = {
-        Authorization: `Bearer ${token.state?.token}`,
-      };
-    }
-    console.log(token);
     return config;
   },
   function (error) {

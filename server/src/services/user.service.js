@@ -61,7 +61,7 @@ const checkEmailTokenService = async ({ token }) => {
 
 const findUserByEmail = async ({ email }) => {
   try {
-    const user = await USER.findOne({ email: email }).lean();
+    const user = await USER.findOne({ usr_email: email }).lean();
     return user;
   } catch (error) {
     throw new Error("Cannot find user");
