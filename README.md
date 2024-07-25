@@ -50,7 +50,7 @@ Welcome to the `G-Weather`, an application for real-time and forecasted weather 
 ## Technical Stack
 
 - **Frontend**: ReactJs
-- **Backend**: ExpressJS
+- **Backend**: ExpressJS, MongoDB
 
 ## Setup
 To get the G-Weather app running locally, let's follow these steps:
@@ -100,7 +100,6 @@ node app.js
 - **Backend**: https://api-weather-app-yit5.onrender.com/
 - **Cron-Job Server**: https://api-weather-scheduler.onrender.com/
 ## Demo
-- **Video Demo**: 
-
+- **Video Demo**: [Youtube](https://www.youtube.com/watch?v=Qs2lRw1DFkE)
 
 
