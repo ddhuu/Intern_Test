@@ -5,11 +5,14 @@ import "./home.css";
 import { apiGetCoord } from "../../apis/Coord";
 import { apiGetCityName } from "../../apis/City";
 import { apiGetWeather } from "../../apis/Weather";
+import { MdExpandMore } from "react-icons/md";
 
 export const Home = () => {
   const [cityName, setCityName] = useState("");
   const [currentCity, setCurrentCity] = useState("");
   const [weatherData, setWeatherData] = useState([{}]);
+  const [displayCount, setDisplayCount] = useState(5);
+  const [numsDay, setNumsDay] = useState(4);
   const inputRef = useRef(null);
 
   useEffect(() => {
@@ -131,6 +134,11 @@ export const Home = () => {
     }
   };
 
+  const handleLoadMore = () => {
+    setDisplayCount(weatherData.length);
+    setNumsDay(5);
+  };
+
   return (
     <>
       <div className="container">
@@ -177,7 +185,18 @@ export const Home = () => {
             />
           )}
           {weatherData.length > 1 && (
-            <Forecast fiveDayForecast={weatherData.slice(1)} />
+            <Forecast
+              fiveDayForecast={weatherData.slice(1, displayCount)}
+              numsDay={numsDay}
+            />
+          )}
+
+          {displayCount < weatherData.length && (
+            <div class="load-more-container">
+              <div class="load-more-btn" onClick={handleLoadMore}>
+                <MdExpandMore size={30} /> <span>More...</span>
+              </div>
+            </div>
           )}
         </div>
       </div>

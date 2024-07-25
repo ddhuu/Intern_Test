@@ -3,9 +3,9 @@ import React from "react";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import "./style.css";
 
-const Forecast = ({ fiveDayForecast }) => (
+const Forecast = ({ fiveDayForecast, numsDay }) => (
   <div className="days-weather">
-    <h2>5-days forecast</h2>
+    <h2>{numsDay}-days forecast</h2>
     <ul className="list-card">
       {Array.isArray(fiveDayForecast) &&
         fiveDayForecast.map((item, idx) => (

@@ -10,8 +10,8 @@ Welcome to the `G-Weather`, an application for real-time and forecasted weather 
 
 
 ### Weather Forecast
-- **Description**: View the weather forecast for the next 5 days.The temporary weather information history will be saved and allow display again during the day.
-- **Screenshot**: ![Weather Forecast](./docs/images/Home.png)
+- **Description**: View the weather forecast for the next 4 days or More.The temporary weather information history will be saved and allow display again during the day.
+- **Screenshot**: ![Weather Forecast](./docs/images/HomeLoadMore.png)
 ### Current Weather Information
 - **Description**: Get detailed current weather information including temperature, wind speed, and humidity.
 - **Screenshot**: ![Current Weather](./docs/images/CurrentPosition.png)
